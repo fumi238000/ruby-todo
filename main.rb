@@ -1,13 +1,14 @@
 # ------------------
-#1タスクを要求する
+#「タイトル」を要求する
+print "タイトルを入力 >"
+input_title = gets
 
-
-
-#2タイトルを要求する
-
-
+#「タイトルのタスク」を要求する
+print "タスクを入力 >"
+input_task = gets.chomp
 
 #③表示する
+puts "#{input_task}: #{input_title}"
 
 
 
