@@ -1,4 +1,4 @@
-dd
+require'pry'
 
 ##----------------------------------------Task
 #タスクは3つの情報を持つ
@@ -10,7 +10,6 @@ class Task
     title = :title
     content = :content
   end
-
 
   def info
     puts "受け取った値は#{title}です"
@@ -53,6 +52,7 @@ end
 
 task1 = Task.new(title: "洗濯", content: "8時までに干し終える")
 task2 = Task.new(title: "水を飲む", content: "500ml")
+binding.pry
 
 todo = ToDo.new
 todo.add(task1)
