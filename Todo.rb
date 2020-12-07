@@ -26,6 +26,7 @@ class Todo
 
   #タスクを削除する処理
   def delete(tasks)
+   
     puts "タスクを削除します"
     
     #タスクの配列を出力する
@@ -34,14 +35,18 @@ class Todo
     #タスク番号を表示
     print "どのタスクを削除しますか？ > "
     select = gets.chomp.to_i
-    
-    binding.pry
-    if select == 1..tasks_length
+  
+
+    if (1..tasks_length).include?(select)
+      binding.pry
       #受け取ったインデックス番号を削除
       puts "以下を削除しました"
       puts "[削除]【#{tasks[select-1][:title]}】：#{tasks[select-1][:task]}"
       tasks.delete_at(select -1)
-     else
+     
+    else
+      binding.pry
+
       puts "その番号はありません"
 
     end
