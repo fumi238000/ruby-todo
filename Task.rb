@@ -34,10 +34,10 @@ class Task
     #文字数制限を追加予定
     print "タスクを入力 > "
     input_task = gets.chomp
-  
+
     #表示
     add_message(input_title,input_task)
-  
+
     # 変数に格納する
     @@tasks << {title: input_title,task: input_task}   
   
