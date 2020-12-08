@@ -1,4 +1,7 @@
+require './message'
+
 class Task
+  include Message
 
   # タスクを格納する配列
   def initialize
@@ -8,14 +11,14 @@ class Task
   #一覧表示機能
   def index
     if @@tasks.empty?
+    
       puts "登録がありません"
+    
     else
+
       puts  "現在のタスク"
-      @@tasks.each.with_index(1) do |task, i|
-        puts <<~TEXT
-        【No.#{i}】【#{task[:title]}】：#{task[:task]}
-        TEXT
-      end
+      index_task_message(@@tasks)
+    
     end
   
   end
@@ -33,13 +36,8 @@ class Task
     input_task = gets.chomp
   
     #表示
-    puts <<~TEXT
-          ---------------------------------------
-             [追加]#{input_title}：#{input_task}
-          ---------------------------------------
-         
-    TEXT
-
+    add_message(input_title,input_task)
+  
     # 変数に格納する
     @@tasks << {title: input_title,task: input_task}   
   
@@ -63,8 +61,10 @@ class Task
 
     #受け取ったインデックス番号を削除
     if (1..tasks_length).include?(select)
-      puts "以下を削除しました"
-      puts "[削除]【#{@@tasks[select-1][:title]}】：#{@@tasks[select-1][:task]}"
+      
+      delete_message(@@tasks,select)
+      
+      #削除
       @@tasks.delete_at(select -1)
     
     else

@@ -4,19 +4,20 @@ require './message'
 class Controller
   include Message
 
-  def make_todo_list
+  def edit_todo_list
 
     task = Task.new
     
     while true
 
-      select_list
+      select_list_message
+      
       print "選択してください > "
       select = gets.chomp.to_i 
 
       case select
         when 1 
-        task.add_task
+          task.add_task
 
         when 2
           #削除処理
