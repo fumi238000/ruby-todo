@@ -4,7 +4,7 @@ require './message'
 class Controller
   include Message
 
-  def self.edit_todo_list
+  def self.todo_list
 
     task = Task.new
     
