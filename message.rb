@@ -1,6 +1,6 @@
 module Message
 
-  def select_list
+  def select_list_message
     puts <<~TEXT
     ------------------ 処理一覧画面-----------------
               
@@ -13,4 +13,38 @@ module Message
     TEXT
 
   end
+
+
+  def add_message(input_title,input_task)
+    puts <<~TEXT
+    -----------------------------------------------------------
+    【追加】#{input_title}：#{input_task}
+    -----------------------------------------------------------
+   
+    TEXT
+  end
+
+
+  def index_task_message(tasks)
+   
+    tasks.each.with_index(1) do |task, i|
+      puts <<~TEXT
+          【No.#{i}】【#{task[:title]}】：#{task[:task]}
+      TEXT
+    end
+
+  end
+
+
+  def delete_message(tasks,select)
+    binding.pry
+    puts  <<~TEXT
+      以下を削除しました
+      -----------------------------------------------------------
+      【削除】【#{tasks[select-1][:title]}】：#{tasks[select-1][:task]}"
+      -----------------------------------------------------------
+    TEXT
+
+  end
+
 end
