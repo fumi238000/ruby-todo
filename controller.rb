@@ -4,7 +4,7 @@ require './message'
 class Controller
   include Message
 
-  def edit_todo_list
+  def self.edit_todo_list
 
     task = Task.new
     
@@ -17,7 +17,7 @@ class Controller
 
       case select
         when 1 
-          task.add_task
+          task.add
 
         when 2
           #削除処理
@@ -36,5 +36,7 @@ class Controller
 
     end
   end
+
+
 
 end

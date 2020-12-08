@@ -25,7 +25,7 @@ class Task
 
 
   #保存機能
-  def add_task
+  def add
   
     #文字数制限を追加予定
     print "タイトルを入力 > "

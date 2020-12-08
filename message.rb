@@ -37,7 +37,6 @@ module Message
 
 
   def delete_message(tasks,select)
-    binding.pry
     puts  <<~TEXT
       以下を削除しました
       -----------------------------------------------------------

@@ -1,5 +1,6 @@
 require'pry'
 require './controller'
+require './message'
+include Message
 
-controller = Controller.new
-controller.edit_todo_list
+Controller.edit_todo_list
