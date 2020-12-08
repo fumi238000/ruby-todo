@@ -13,7 +13,7 @@ class Task
 
   #タスク一覧表示
   def index
-    if @@tasks == []
+    if @@tasks.empty?
       puts "登録がありません"
     else
       puts  "現在のタスク"
