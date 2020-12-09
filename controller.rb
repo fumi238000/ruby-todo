@@ -1,4 +1,4 @@
-require './task'
+require './todo'
 require './message'
 
 class Controller
@@ -6,7 +6,7 @@ class Controller
 
   def self.todo_list
 
-    task = Task.new
+    todo = ToDo.new
     
     while true
 
@@ -17,14 +17,14 @@ class Controller
 
       case select
         when 1 
-          task.add
+          todo.add
 
         when 2
           #削除処理
-          task.delete
+          todo.delete
 
         when 3
-          task.index
+          todo.index
     
         when 4
           puts "ありがとうございました"

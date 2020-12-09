@@ -3,7 +3,7 @@ module Message
   def select_list_message
     puts <<~TEXT
     ------------------ 処理一覧画面-----------------
-              
+            
                 1,タスクを追加する
                 2.タスクを削除する
                 3.タスク一覧を表示する 

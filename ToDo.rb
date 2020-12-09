@@ -1,6 +1,6 @@
 require './message'
 
-class Task
+class ToDo
   include Message
 
   # タスクを格納する配列
